@@ -2,13 +2,8 @@ package inheritance;
 
 import java.time.LocalDate;
 
-public class Apartment {
-    private String title;
-    private String listingId;
-    private double price;
-    private String city;
-    private String condition;
-    private LocalDate lastModified;
+public class Apartment extends Product {
+
     private double maintenanceFee;
     private double livingArea;
     private int rooms;
@@ -22,12 +17,9 @@ public class Apartment {
             LocalDate lastModified, double maintenanceFee, double livingArea, int rooms, int floors, int buildYear,
             String buildingType, String district, String fees) {
 
-        this.title = title;
-        this.listingId = listingId;
-        this.price = price;
-        this.city = city;
-        this.condition = condition;
-        this.lastModified = lastModified;
+        // "super" kutsuu yliluokan (Product) konstruktoria:
+        super(title, listingId, price, city, condition, lastModified);
+
         this.maintenanceFee = maintenanceFee;
         this.livingArea = livingArea;
         this.rooms = rooms;
@@ -36,30 +28,6 @@ public class Apartment {
         this.buildingType = buildingType;
         this.district = district;
         this.fees = fees;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getListingId() {
-        return listingId;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getCondition() {
-        return condition;
-    }
-
-    public LocalDate getLastModified() {
-        return lastModified;
     }
 
     public double getMaintenanceFee() {
@@ -112,8 +80,8 @@ public class Apartment {
                 Building Type: %s
                 District: %s
                 Fees: %s
-                """, title, listingId, price, city, condition, lastModified, maintenanceFee, livingArea, rooms, floors,
+                """, getTitle(), getListingId(), getPrice(), getCity(), getCondition(), getLastModified(),
+                maintenanceFee, livingArea, rooms, floors,
                 buildYear, buildingType, district, fees);
-
     }
 }

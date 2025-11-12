@@ -2,13 +2,7 @@ package inheritance;
 
 import java.time.LocalDate;
 
-public class Vehicle {
-    private String title;
-    private String listingId;
-    private double price;
-    private String city;
-    private String condition;
-    private LocalDate lastModified;
+public class Vehicle extends Product {
     private String make;
     private String model;
     private String registrationNumber;
@@ -31,12 +25,9 @@ public class Vehicle {
             String transmission, boolean automatic, String driveType, boolean fourWheelDrive, double officeFee,
             LocalDate inspectionDate, String bodyStyle, String vehicleType, String color, String vinNumber) {
 
-        this.title = title;
-        this.listingId = listingId;
-        this.price = price;
-        this.city = city;
-        this.condition = condition;
-        this.lastModified = lastModified;
+        // "super" kutsuu yliluokan (Product) konstruktoria:
+        super(title, listingId, price, city, condition, lastModified);
+
         this.make = make;
         this.model = model;
         this.registrationNumber = registrationNumber;
@@ -53,30 +44,6 @@ public class Vehicle {
         this.vehicleType = vehicleType;
         this.color = color;
         this.vinNumber = vinNumber;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getListingId() {
-        return listingId;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getCondition() {
-        return condition;
-    }
-
-    public LocalDate getLastModified() {
-        return lastModified;
     }
 
     public String getMake() {
@@ -155,7 +122,7 @@ public class Vehicle {
                 Make: %s
                 Model: %s
                 Registration Number: %s
-                Mileage: %d
+                Mileage: %.1f
                 Engine: %s
                 Model Year: %d
                 Transmission: %s
@@ -168,8 +135,8 @@ public class Vehicle {
                 Vehicle Type: %s
                 Color: %s
                 VIN Number: %s
-                """, listingId, price, city, condition, lastModified, make, model, registrationNumber, mileage,
-                engine, modelYear, transmission, automatic, driveType, fourWheelDrive, officeFee, inspectionDate,
-                bodyStyle, vehicleType, color, vinNumber);
+                """, getListingId(), getPrice(), getCity(), getCondition(), getLastModified(), make, model,
+                registrationNumber, mileage, engine, modelYear, transmission, automatic, driveType, fourWheelDrive,
+                officeFee, inspectionDate, bodyStyle, vehicleType, color, vinNumber);
     }
 }
