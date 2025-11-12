@@ -2,6 +2,8 @@ package inheritance;
 
 import java.util.List;
 
+import inheritance.pages.ProductPage;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -19,7 +21,8 @@ public class Main {
                         java.time.LocalDate.of(2024, 4, 10)));
 
         for (Product product : products) {
-            System.out.println(product);
+            ProductPage page = new ProductPage(product);
+            System.out.println(page.display());
         }
     }
 }
