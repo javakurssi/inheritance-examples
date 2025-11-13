@@ -2,7 +2,9 @@ package inheritance;
 
 import java.util.List;
 
+import inheritance.pages.ApartmentPage;
 import inheritance.pages.ProductPage;
+import inheritance.pages.VehiclePage;
 
 public class Main {
 
@@ -21,8 +23,19 @@ public class Main {
                         java.time.LocalDate.of(2024, 4, 10)));
 
         for (Product product : products) {
-            ProductPage page = new ProductPage(product);
-            System.out.println(page.display());
+
+            if (product instanceof Vehicle vehicle) {
+                VehiclePage vp = new VehiclePage(vehicle);
+                System.out.println(vp.display());
+
+            } else if (product instanceof Apartment apartment) {
+                ApartmentPage ap = new ApartmentPage(apartment);
+                System.out.println(ap.display());
+
+            } else {
+                ProductPage pp = new ProductPage(product);
+                System.out.println(pp.display());
+            }
         }
     }
 }

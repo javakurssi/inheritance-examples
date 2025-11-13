@@ -2,7 +2,7 @@ package inheritance;
 
 import java.time.LocalDate;
 
-public class Product {
+public class Product implements Comparable<Product> {
 
     private String title;
     private String listingId;
@@ -43,6 +43,14 @@ public class Product {
 
     public LocalDate getLastModified() {
         return lastModified;
+    }
+
+    @Override
+    public int compareTo(Product other) {
+        LocalDate thisModified = this.getLastModified();
+        LocalDate otherModified = other.getLastModified();
+
+        return thisModified.compareTo(otherModified);
     }
 
     @Override
