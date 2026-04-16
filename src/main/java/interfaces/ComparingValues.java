@@ -1,6 +1,6 @@
 package interfaces;
 
-public class ComparingString {
+public class ComparingValues {
 
     public static void main(String[] args) {
 
