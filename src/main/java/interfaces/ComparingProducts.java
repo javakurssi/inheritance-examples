@@ -1,7 +1,6 @@
 package interfaces;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import inheritance.Apartment;
@@ -25,7 +24,7 @@ public class ComparingProducts {
         products.add(new Product("Coffee mug", "P789", 12.99, "Tampere", "New",
                 java.time.LocalDate.of(2024, 4, 10)));
 
-        Collections.sort(products);
+        products.sort(null);
 
         for (Product p : products) {
             System.out.println(p.getTitle() + " " + p.getLastModified());
