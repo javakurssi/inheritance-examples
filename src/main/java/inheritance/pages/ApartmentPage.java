@@ -2,17 +2,15 @@ package inheritance.pages;
 
 import inheritance.Apartment;
 
-public class ApartmentPage extends ProductPage {
+public class ApartmentPage {
 
     private Apartment apartment;
 
     public ApartmentPage(Apartment apartment) {
-        super(apartment);
 
         this.apartment = apartment;
     }
 
-    @Override
     public String display() {
         StringBuilder html = new StringBuilder();
         html.append("<div>\n");

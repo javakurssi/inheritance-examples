@@ -2,17 +2,14 @@ package inheritance.pages;
 
 import inheritance.Vehicle;
 
-public class VehiclePage extends ProductPage {
+public class VehiclePage {
 
     private Vehicle vehicle;
 
     public VehiclePage(Vehicle vehicle) {
-        super(vehicle);
-
         this.vehicle = vehicle;
     }
 
-    @Override
     public String display() {
         StringBuilder html = new StringBuilder();
         html.append("<div>\n");
