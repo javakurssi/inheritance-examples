@@ -2,7 +2,7 @@ package inheritance.pages;
 
 import inheritance.Apartment;
 
-public class ApartmentPage {
+public class ApartmentPage implements Page {
 
     private Apartment apartment;
 
@@ -11,6 +11,7 @@ public class ApartmentPage {
         this.apartment = apartment;
     }
 
+    @Override
     public String display() {
         StringBuilder html = new StringBuilder();
         html.append("<div>\n");

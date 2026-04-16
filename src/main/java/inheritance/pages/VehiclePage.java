@@ -2,7 +2,7 @@ package inheritance.pages;
 
 import inheritance.Vehicle;
 
-public class VehiclePage {
+public class VehiclePage implements Page {
 
     private Vehicle vehicle;
 
@@ -10,6 +10,7 @@ public class VehiclePage {
         this.vehicle = vehicle;
     }
 
+    @Override
     public String display() {
         StringBuilder html = new StringBuilder();
         html.append("<div>\n");

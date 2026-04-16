@@ -2,7 +2,7 @@ package inheritance.pages;
 
 import inheritance.Product;
 
-public class ProductPage {
+public class ProductPage implements Page {
 
     private Product product;
 
@@ -10,6 +10,7 @@ public class ProductPage {
         this.product = product;
     }
 
+    @Override
     public String display() {
         StringBuilder html = new StringBuilder();
         html.append("<div>\n");

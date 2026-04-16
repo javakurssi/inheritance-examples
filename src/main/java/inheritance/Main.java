@@ -2,7 +2,10 @@ package inheritance;
 
 import java.util.List;
 
+import inheritance.pages.ApartmentPage;
+import inheritance.pages.Page;
 import inheritance.pages.ProductPage;
+import inheritance.pages.VehiclePage;
 
 public class Main {
 
@@ -22,8 +25,20 @@ public class Main {
         List<Product> products = List.of(corolla, apartment, mug);
 
         for (Product product : products) {
-            ProductPage pp = new ProductPage(product);
-            System.out.println(pp.display());
+            Page page = getPage(product);
+            System.out.println(page.display());
         }
+    }
+
+    private static Page getPage(Product product) {
+        if (product instanceof Vehicle veh) {
+            return new VehiclePage(veh);
+        }
+
+        if (product instanceof Apartment apt) {
+            return new ApartmentPage(apt);
+        }
+
+        return new ProductPage(product);
     }
 }
